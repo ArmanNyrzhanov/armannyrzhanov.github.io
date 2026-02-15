@@ -4,6 +4,43 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ArtNet Node 2x — SahnaLab</title>
+/* ===== SPECS ===== */
+
+.specs{
+margin-top:25px;
+border-radius:16px;
+overflow:hidden;
+border:1px solid rgba(255,255,255,0.05);
+}
+
+.spec{
+display:flex;
+justify-content:space-between;
+padding:18px 22px;
+border-bottom:1px solid rgba(255,255,255,0.05);
+background:rgba(30,41,59,0.4);
+}
+
+.spec:last-child{
+border-bottom:none;
+}
+
+.spec span:first-child{
+color:#94a3b8;
+}
+
+.spec span:last-child{
+font-weight:500;
+}
+
+/* mobile */
+
+@media(max-width:700px){
+.spec{
+flex-direction:column;
+gap:6px;
+}
+}
 
 <style>
 
@@ -185,93 +222,64 @@ ArtNet Node 2x — профессиональное устройство для 
 <!-- характеристики -->
 
 <div class="section">
+<div class="section">
 <h2>Технические характеристики</h2>
 
-<div class="features">
+<div class="specs">
 
-<div class="feature">
-<b>Протокол:</b><br>
-Art-Net → DMX512
+<div class="spec">
+<span>Протокол</span>
+<span>Art-Net → DMX512</span>
 </div>
 
-<div class="feature">
-<b>DMX выходы:</b><br>
-2 независимых universes
+<div class="spec">
+<span>DMX выходы</span>
+<span>2 независимых universes</span>
 </div>
 
-<div class="feature">
-<b>Сеть:</b><br>
-Ethernet 10/100 Mbps
+<div class="spec">
+<span>Сеть</span>
+<span>Ethernet 10/100 Mbps</span>
 </div>
 
-<div class="feature">
-<b>Контроллер:</b><br>
-ESP32
+<div class="spec">
+<span>Контроллер</span>
+<span>ESP32</span>
 </div>
 
-<div class="feature">
-<b>PHY:</b><br>
-LAN8720
+<div class="spec">
+<span>PHY</span>
+<span>LAN8720</span>
 </div>
 
-<div class="feature">
-<b>Web интерфейс:</b><br>
-Настройка IP, universes, параметры сети
+<div class="spec">
+<span>Web интерфейс</span>
+<span>Настройка IP, universes, сеть</span>
 </div>
 
-<div class="feature">
-<b>OTA обновление:</b><br>
-Обновление прошивки через браузер
+<div class="spec">
+<span>OTA обновление</span>
+<span>Через браузер</span>
 </div>
 
-<div class="feature">
-<b>Питание:</b><br>
-5V DC
+<div class="spec">
+<span>Питание</span>
+<span>5V DC</span>
 </div>
 
-<div class="feature">
-<b>Задержка:</b><br>
-Минимальная (реальное время)
+<div class="spec">
+<span>Задержка</span>
+<span>Минимальная</span>
 </div>
 
-<div class="feature">
-<b>Назначение:</b><br>
-Сценический свет и автоматизация
-</div>
-
-</div>
-</div>
-
-<div class="feature">
-✔ 2 независимых DMX выхода
-</div>
-
-<div class="feature">
-✔ Ethernet подключение
-</div>
-
-<div class="feature">
-✔ Web интерфейс настройки
-</div>
-
-<div class="feature">
-✔ ESP32 + LAN8720
-</div>
-
-<div class="feature">
-✔ Поддержка Art-Net
-</div>
-
-<div class="feature">
-✔ OTA обновление прошивки
+<div class="spec">
+<span>Назначение</span>
+<span>Сценический свет</span>
 </div>
 
 </div>
 </div>
 
-<!-- download -->
-
-<div class="section">
 <h2>Прошивка</h2>
 
 <p>Скачать последнюю версию прошивки устройства:</p>
