@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ArtNet Node 2x — SahnaLab</title>
+
+<style>
+
+/* ===== RESET ===== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+/* ===== BODY ===== */
+
+body{
+font-family:"Segoe UI",system-ui,sans-serif;
+background: radial-gradient(circle at 20% 10%, #1e293b, #020617);
+color:white;
+}
+
+/* ===== NAV ===== */
+
+.nav{
+position:sticky;
+top:0;
+background:rgba(2,6,23,0.8);
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.nav-container{
+max-width:1200px;
+margin:auto;
+padding:18px 20px;
+display:flex;
+justify-content:space-between;
+}
+
+.links a{
+margin-left:25px;
+color:#cbd5f5;
+text-decoration:none;
+}
+
+.links a:hover{
+color:#22c55e;
+}
+
+/* ===== CONTAINER ===== */
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:80px 20px;
+}
+
+/* ===== HERO ===== */
+
+.hero{
+text-align:center;
+margin-bottom:60px;
+}
+
+.hero h1{
+font-size:56px;
+}
+
+.subtitle{
+color:#94a3b8;
+margin-top:15px;
+}
+
+/* ===== SECTIONS ===== */
+
+.section{
+margin-top:60px;
+}
+
+.section h2{
+color:#22c55e;
+margin-bottom:20px;
+}
+
+/* ===== FEATURES ===== */
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+}
+
+.feature{
+background:rgba(30,41,59,0.6);
+padding:25px;
+border-radius:16px;
+}
+
+/* ===== BUTTON ===== */
+
+.button{
+display:inline-block;
+margin-top:20px;
+padding:14px 28px;
+background:#22c55e;
+color:black;
+text-decoration:none;
+border-radius:10px;
+font-weight:600;
+}
+
+.button:hover{
+background:#16a34a;
+}
+
+/* ===== IMAGE PLACEHOLDER ===== */
+
+.image-box{
+height:300px;
+background:#1e293b;
+border-radius:18px;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#64748b;
+margin-top:20px;
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:700px){
+.hero h1{font-size:36px;}
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="nav">
+<div class="nav-container">
+<div>SahnaLab</div>
+
+<div class="links">
+<a href="index.html">Главная</a>
+<a href="projects.html">Проекты</a>
+</div>
+</nav>
+
+<div class="container">
+
+<div class="hero">
+<h1>ArtNet Node 2x</h1>
+<p class="subtitle">
+Art-Net → DMX конвертер с двумя независимыми DMX выходами и web интерфейсом
+</p>
+</div>
+
+<!-- описание -->
+
+<div class="section">
+<h2>Описание</h2>
+
+<p>
+ArtNet Node 2x — профессиональное устройство для преобразования Art-Net сигнала
+в два независимых DMX512 выхода. Устройство работает по Ethernet и имеет
+удобный web-интерфейс для настройки параметров.
+</p>
+
+<div class="image-box">
+Фото устройства / схема / рендер
+</div>
+</div>
+
+<!-- характеристики -->
+
+<div class="section">
+<h2>Основные возможности</h2>
+
+<div class="features">
+
+<div class="feature">
+✔ 2 независимых DMX выхода
+</div>
+
+<div class="feature">
+✔ Ethernet подключение
+</div>
+
+<div class="feature">
+✔ Web интерфейс настройки
+</div>
+
+<div class="feature">
+✔ ESP32 + LAN8720
+</div>
+
+<div class="feature">
+✔ Поддержка Art-Net
+</div>
+
+<div class="feature">
+✔ OTA обновление прошивки
+</div>
+
+</div>
+</div>
+
+<!-- download -->
+
+<div class="section">
+<h2>Прошивка</h2>
+
+<p>Скачать последнюю версию прошивки устройства:</p>
+
+<a href="#" class="button">Скачать прошивку</a>
+</div>
+
+</div>
+
+</body>
+</html>
