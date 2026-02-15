@@ -2,74 +2,125 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <title>SahnaLab</title>
 
 <style>
 
-body {
-    margin: 0;
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: #0f172a;
-    color: white;
+/* ===== RESET ===== */
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-/* header */
+/* ===== BODY ===== */
+
+body {
+    font-family: "Segoe UI", system-ui, sans-serif;
+    background: radial-gradient(circle at 20% 10%, #1e293b, #020617);
+    color:white;
+}
+
+/* ===== HEADER ===== */
 
 header {
-    text-align: center;
-    padding: 120px 20px;
+    text-align:center;
+    padding:120px 20px 80px;
+}
+
+.logo {
+    width:240px;
+    margin-bottom:25px;
+    filter: drop-shadow(0 0 25px #22c55e88);
 }
 
 h1 {
-    font-size: 70px;
-    margin: 0;
+    font-size:64px;
+    font-weight:700;
+    letter-spacing:2px;
 }
 
 .subtitle {
-    font-size: 22px;
-    color: #94a3b8;
-    margin-top: 20px;
+    margin-top:20px;
+    color:#94a3b8;
+    font-size:20px;
+    max-width:700px;
+    margin-left:auto;
+    margin-right:auto;
 }
 
-/* container */
+/* ===== CONTAINER ===== */
 
 .container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 40px 20px;
+    max-width:1200px;
+    margin:auto;
+    padding:40px 20px 80px;
 }
 
-/* cards */
+/* ===== GRID ===== */
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap:28px;
 }
 
+/* ===== CARDS ===== */
+
 .card {
-    background: #1e293b;
-    padding: 30px;
-    border-radius: 14px;
-    transition: 0.2s;
+    background: rgba(30,41,59,0.6);
+    backdrop-filter: blur(14px);
+    border:1px solid rgba(255,255,255,0.05);
+    border-radius:18px;
+    padding:35px;
+    transition:0.25s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform:translateY(-8px);
+    border:1px solid #22c55e66;
+    box-shadow:0 0 40px #22c55e22;
 }
 
 .card h2 {
-    margin-top: 0;
-    color: #22c55e;
+    color:#22c55e;
+    margin-bottom:15px;
 }
 
-/* footer */
+.card p {
+    color:#cbd5f5;
+}
+
+/* ===== FOOTER ===== */
 
 footer {
-    text-align: center;
-    padding: 40px;
-    color: #64748b;
+    text-align:center;
+    padding:50px;
+    color:#64748b;
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width:700px){
+
+    header {
+        padding:80px 20px 40px;
+    }
+
+    h1 {
+        font-size:42px;
+    }
+
+    .logo {
+        width:170px;
+    }
+
+    .subtitle {
+        font-size:16px;
+    }
 }
 
 </style>
@@ -79,12 +130,15 @@ footer {
 
 <header>
 
-<img src="logo.png" style="width:220px; margin-bottom:20px;">
+<img src="logo.png" class="logo">
 
 <h1>SahnaLab</h1>
+
 <p class="subtitle">
-Разработка профессиональных систем управления сценическим светом, DMX и Art-Net устройств
+Разработка профессиональных систем управления сценическим светом,
+DMX и Art-Net устройств
 </p>
+
 </header>
 
 <div class="container">
@@ -98,12 +152,12 @@ footer {
 
 <div class="card">
 <h2>🎛 Sahna Control</h2>
-<p>Разработка профессионального светового пульта и playback системы.</p>
+<p>Профессиональный световой пульт, playback engine и управление шоу.</p>
 </div>
 
 <div class="card">
 <h2>📥 Скачать</h2>
-<p>Прошивки, программы, схемы и документация.</p>
+<p>Прошивки, программы, схемы и документация устройств.</p>
 </div>
 
 <div class="card">
@@ -113,7 +167,7 @@ footer {
 
 <div class="card">
 <h2>👨‍🔧 О разработчике</h2>
-<p>Арман Нуржанов — Практикующий инженер по разработке электроники и художник по свету.</p>
+<p>Арман Нуржанов — инженер электроники и художник по свету.</p>
 </div>
 
 </div>
