@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Проекты — SahnaLab</title>
+
+<style>
+
+body {
+    margin:0;
+    font-family:"Segoe UI",sans-serif;
+    background:#020617;
+    color:white;
+}
+
+.nav {
+    position:sticky;
+    top:0;
+    backdrop-filter: blur(10px);
+    background: rgba(2,6,23,0.7);
+    border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.nav-container {
+    max-width:1200px;
+    margin:auto;
+    padding:18px 20px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.links a {
+    margin-left:25px;
+    color:#cbd5f5;
+    text-decoration:none;
+}
+
+.links a:hover {
+    color:#22c55e;
+}
+
+.container {
+    max-width:1200px;
+    margin:auto;
+    padding:80px 20px;
+}
+
+.grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.card {
+    background:#1e293b;
+    padding:30px;
+    border-radius:16px;
+}
+
+.card h2 {
+    color:#22c55e;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="nav">
+<div class="nav-container">
+<div>SahnaLab</div>
+
+<div class="links">
+<a href="index.html">Главная</a>
+<a href="projects.html">Проекты</a>
+</div>
+</nav>
+
+<div class="container">
+
+<h1>Проекты SahnaLab</h1>
+<br>
+
+<div class="grid">
+
+<div class="card">
+<h2>ArtNet Node 2x</h2>
+<p>Art-Net → DMX конвертер с двумя выходами, web интерфейсом и Ethernet.</p>
+</div>
+
+<div class="card">
+<h2>Sahna Control</h2>
+<p>Профессиональный световой пульт с playback engine и эффектами.</p>
+</div>
+
+<div class="card">
+<h2>ESP32 DMX устройства</h2>
+<p>Разработка контроллеров и автоматизации сценического света.</p>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
