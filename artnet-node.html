@@ -48,6 +48,10 @@
     .english h2 { font-size:23px; }
     .english p { color:var(--muted); }
     .contact { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:20px; }
+    .contact-details p { margin-bottom:5px; }
+    .contact-email { color:var(--cyan); text-decoration:none; font-weight:600; }
+    .contact-email:hover { text-decoration:underline; }
+    .contact-note { color:var(--muted); font-size:13px; }
     .button { display:inline-block; padding:11px 17px; border-radius:10px; color:#09120a; background:var(--green); text-decoration:none; font-weight:700; }
     .button:hover { background:#c1ff82; }
     footer { margin-top:38px; padding:30px 0 42px; border-top:1px solid #ffffff12; color:#8094a4; font-size:13px; }
@@ -59,7 +63,7 @@
   <div class="topbar">
     <nav class="wrap nav" aria-label="Основная навигация">
       <a class="brand" href="index.html"><span>SAHNA LAB</span></a>
-      <div class="navlinks"><a href="index.html">Главная</a><a href="projects.html">Проекты</a><a href="#contact">Контакт</a></div>
+      <div class="navlinks"><a href="index.html">Главная</a><a href="#contact">Контакт</a></div>
     </nav>
   </div>
 
@@ -145,8 +149,13 @@
     </section>
 
     <section class="section contact" id="contact" aria-labelledby="contact-title">
-      <div><h2 id="contact-title">Связаться с разработчиком</h2><p>Вопросы по проекту Sahna Node 01 и Sahna Lab.</p></div>
-      <a class="button" href="mailto:armannyrzhanov@gmail.com">Написать</a>
+      <div class="contact-details">
+        <h2 id="contact-title">Связаться с разработчиком</h2>
+        <p>Вопросы по проекту Sahna Node 01 и Sahna Lab.</p>
+        <p><a class="contact-email" href="mailto:armannyrzhanov@gmail.com">armannyrzhanov@gmail.com</a></p>
+        <p class="contact-note">Если почтовое приложение не откроется, адрес можно скопировать.</p>
+      </div>
+      <a class="button" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=armannyrzhanov%40gmail.com" target="_blank" rel="noopener noreferrer">Открыть Gmail</a>
     </section>
   </main>
 
