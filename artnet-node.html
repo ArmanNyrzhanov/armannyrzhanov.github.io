@@ -1,283 +1,155 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ArtNet Node 2x — SahnaLab</title>
-/* ===== SPECS ===== */
-
-.specs{
-margin-top:25px;
-border-radius:16px;
-overflow:hidden;
-border:1px solid rgba(255,255,255,0.05);
-}
-
-.spec{
-display:flex;
-justify-content:space-between;
-padding:18px 22px;
-border-bottom:1px solid rgba(255,255,255,0.05);
-background:rgba(30,41,59,0.4);
-}
-
-.spec:last-child{
-border-bottom:none;
-}
-
-.spec span:first-child{
-color:#94a3b8;
-}
-
-.spec span:last-child{
-font-weight:500;
-}
-
-/* mobile */
-
-@media(max-width:700px){
-.spec{
-flex-direction:column;
-gap:6px;
-}
-}
-
-<style>
-
-/* ===== RESET ===== */
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-/* ===== BODY ===== */
-
-body{
-font-family:"Segoe UI",system-ui,sans-serif;
-background: radial-gradient(circle at 20% 10%, #1e293b, #020617);
-color:white;
-}
-
-/* ===== NAV ===== */
-
-.nav{
-position:sticky;
-top:0;
-background:rgba(2,6,23,0.8);
-backdrop-filter:blur(10px);
-border-bottom:1px solid rgba(255,255,255,0.05);
-}
-
-.nav-container{
-max-width:1200px;
-margin:auto;
-padding:18px 20px;
-display:flex;
-justify-content:space-between;
-}
-
-.links a{
-margin-left:25px;
-color:#cbd5f5;
-text-decoration:none;
-}
-
-.links a:hover{
-color:#22c55e;
-}
-
-/* ===== CONTAINER ===== */
-
-.container{
-max-width:1000px;
-margin:auto;
-padding:80px 20px;
-}
-
-/* ===== HERO ===== */
-
-.hero{
-text-align:center;
-margin-bottom:60px;
-}
-
-.hero h1{
-font-size:56px;
-}
-
-.subtitle{
-color:#94a3b8;
-margin-top:15px;
-}
-
-/* ===== SECTIONS ===== */
-
-.section{
-margin-top:60px;
-}
-
-.section h2{
-color:#22c55e;
-margin-bottom:20px;
-}
-
-/* ===== FEATURES ===== */
-
-.features{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
-}
-
-.feature{
-background:rgba(30,41,59,0.6);
-padding:25px;
-border-radius:16px;
-}
-
-/* ===== BUTTON ===== */
-
-.button{
-display:inline-block;
-margin-top:20px;
-padding:14px 28px;
-background:#22c55e;
-color:black;
-text-decoration:none;
-border-radius:10px;
-font-weight:600;
-}
-
-.button:hover{
-background:#16a34a;
-}
-
-/* ===== IMAGE PLACEHOLDER ===== */
-
-.image-box{
-height:300px;
-background:#1e293b;
-border-radius:18px;
-display:flex;
-align-items:center;
-justify-content:center;
-color:#64748b;
-margin-top:20px;
-}
-
-/* ===== MOBILE ===== */
-
-@media(max-width:700px){
-.hero h1{font-size:36px;}
-}
-
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sahna Node 01 — разрабатываемая однопортовая Art-Net 4 to DMX512 нода от Sahna Lab, Казахстан.">
+  <meta name="theme-color" content="#07111d">
+  <title>Sahna Node 01 — Sahna Lab</title>
+  <link rel="icon" type="image/x-icon" href="favicon_sahnalab.ico">
+  <style>
+    :root { color-scheme: dark; --bg:#07111d; --panel:#101e2d; --line:#213548; --text:#edf4f8; --muted:#a8bac8; --green:#a7f35c; --cyan:#75d8df; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; font:16px/1.65 "Segoe UI",system-ui,sans-serif; color:var(--text); background:radial-gradient(ellipse at 78% -12%,#15354a 0,transparent 42%),var(--bg); }
+    a { color:inherit; }
+    .wrap { width:min(1080px,calc(100% - 40px)); margin-inline:auto; }
+    .topbar { position:sticky; top:0; z-index:2; backdrop-filter:blur(16px); background:#07111ddd; border-bottom:1px solid #ffffff12; }
+    .nav { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand { display:flex; align-items:center; gap:12px; text-decoration:none; font-weight:700; letter-spacing:.07em; }
+    .navlinks { display:flex; gap:24px; color:var(--muted); font-size:14px; }
+    .navlinks a { text-decoration:none; }
+    .navlinks a:hover { color:var(--green); }
+    .hero { padding:86px 0 64px; display:grid; grid-template-columns:1.1fr .9fr; align-items:center; gap:50px; }
+    .eyebrow { color:var(--cyan); text-transform:uppercase; letter-spacing:.16em; font-size:12px; font-weight:700; }
+    h1 { margin:14px 0 12px; font-size:clamp(44px,7vw,76px); line-height:1.03; letter-spacing:-.045em; }
+    .lead { max-width:620px; color:#d0dce5; font-size:clamp(18px,2.2vw,22px); line-height:1.5; }
+    .status { display:inline-flex; align-items:center; gap:9px; margin-top:20px; padding:8px 13px; border:1px solid #a7f35c66; border-radius:99px; color:#d8f8b3; background:#a7f35c0d; font-size:13px; }
+    .status::before { content:""; width:7px; height:7px; border-radius:50%; background:var(--green); box-shadow:0 0 12px var(--green); }
+    .diagram { padding:25px 18px 15px; border:1px solid var(--line); border-radius:22px; background:linear-gradient(145deg,#14283a,#0c1724); box-shadow:0 28px 80px #0005; }
+    .diagram svg { width:100%; height:auto; display:block; }
+    .caption { margin:10px 0 0; text-align:center; color:var(--muted); font-size:12px; }
+    .section { padding:38px 0; border-top:1px solid #ffffff12; }
+    .section h2 { margin:0 0 17px; font-size:clamp(25px,3vw,34px); letter-spacing:-.025em; }
+    .section p { color:#d2dde5; max-width:820px; margin:0 0 14px; }
+    .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:15px; }
+    .card { padding:22px; border:1px solid var(--line); border-radius:16px; background:#101e2dbb; }
+    .card h3 { margin:0 0 8px; color:var(--green); font-size:17px; }
+    .card p { margin:0; color:var(--muted); font-size:14px; }
+    .specs { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 30px; border-top:1px solid var(--line); }
+    .spec { display:flex; justify-content:space-between; gap:20px; padding:14px 0; border-bottom:1px solid var(--line); }
+    .spec dt { color:var(--muted); }
+    .spec dd { margin:0; text-align:right; font-weight:600; }
+    .notice { padding:19px 22px; border-left:3px solid var(--cyan); border-radius:0 12px 12px 0; background:#75d8df0c; color:#d8e8ef; }
+    .notice strong { color:var(--text); }
+    .features { margin:0; padding-left:20px; color:#d2dde5; }
+    .features li { margin:7px 0; }
+    .english { margin-top:10px; padding:24px 26px; border:1px solid var(--line); border-radius:16px; background:#0b1824; }
+    .english h2 { font-size:23px; }
+    .english p { color:var(--muted); }
+    .contact { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:20px; }
+    .button { display:inline-block; padding:11px 17px; border-radius:10px; color:#09120a; background:var(--green); text-decoration:none; font-weight:700; }
+    .button:hover { background:#c1ff82; }
+    footer { margin-top:38px; padding:30px 0 42px; border-top:1px solid #ffffff12; color:#8094a4; font-size:13px; }
+    @media (max-width:760px) { .hero { grid-template-columns:1fr; gap:30px; padding:62px 0 44px; } .diagram { max-width:560px; } .grid { grid-template-columns:1fr; } .specs { grid-template-columns:1fr; } }
+    @media (max-width:500px) { .wrap { width:min(100% - 28px,1080px); } .nav { min-height:60px; } .navlinks { gap:14px; font-size:13px; } .brand { font-size:13px; } .spec { gap:12px; font-size:14px; } .spec dd { max-width:58%; } .english { padding:20px; } }
+  </style>
 </head>
-
 <body>
+  <div class="topbar">
+    <nav class="wrap nav" aria-label="Основная навигация">
+      <a class="brand" href="index.html"><span>SAHNA LAB</span></a>
+      <div class="navlinks"><a href="index.html">Главная</a><a href="projects.html">Проекты</a><a href="#contact">Контакт</a></div>
+    </nav>
+  </div>
 
-<nav class="nav">
-<div class="nav-container">
-<div>SahnaLab</div>
+  <main class="wrap">
+    <header class="hero">
+      <div>
+        <div class="eyebrow">Сетевые решения для света</div>
+        <h1>Sahna Node 01</h1>
+        <p class="lead">Однопортовая нода Art-Net → DMX512 для управления одним DMX-универсом через Ethernet.</p>
+        <div class="status">Инженерный прототип · идёт проверка</div>
+      </div>
+      <figure class="diagram">
+        <svg viewBox="0 0 560 250" role="img" aria-labelledby="diagram-title diagram-desc" xmlns="http://www.w3.org/2000/svg">
+          <title id="diagram-title">Структурная схема Sahna Node 01</title>
+          <desc id="diagram-desc">Art-Net контроллер передаёт данные по Ethernet в ноду, которая выдаёт один сигнал DMX512 через RS-485.</desc>
+          <defs><linearGradient id="wire" x1="0" x2="1"><stop stop-color="#75d8df"/><stop offset="1" stop-color="#a7f35c"/></linearGradient><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 8 4 0 8Z" fill="#a7f35c"/></marker></defs>
+          <g fill="#13293a" stroke="#365168" stroke-width="1.5">
+            <rect x="16" y="76" width="135" height="94" rx="14"/><rect x="204" y="56" width="157" height="134" rx="17"/><rect x="414" y="76" width="130" height="94" rx="14"/>
+          </g>
+          <path d="M151 123H197M361 123H406" stroke="url(#wire)" stroke-width="3" marker-end="url(#arrow)"/>
+          <g fill="#edf4f8" font-family="Segoe UI,system-ui,sans-serif" text-anchor="middle">
+            <text x="83" y="111" font-size="16" font-weight="700">Art-Net</text><text x="83" y="137" fill="#a8bac8" font-size="13">lighting controller</text>
+            <text x="282" y="101" font-size="17" font-weight="700">Sahna Node 01</text><text x="282" y="128" fill="#a8bac8" font-size="13">WT32-ETH01</text><text x="282" y="151" fill="#a8bac8" font-size="13">one universe</text>
+            <text x="479" y="111" font-size="16" font-weight="700">DMX512</text><text x="479" y="137" fill="#a8bac8" font-size="13">one output</text>
+            <text x="173" y="106" fill="#75d8df" font-size="10">Ethernet</text><text x="387" y="106" fill="#a7f35c" font-size="10">RS-485</text>
+          </g>
+        </svg>
+        <figcaption class="caption">Функциональная схема</figcaption>
+      </figure>
+    </header>
 
-<div class="links">
-<a href="index.html">Главная</a>
-<a href="projects.html">Проекты</a>
-</div>
-</nav>
+    <section class="section" aria-labelledby="about-title">
+      <h2 id="about-title">О проекте</h2>
+      <p><strong>Sahna Node 01</strong> — разрабатываемый сетевой шлюз для преобразования Art-Net в один физический выход DMX512. Проект рассчитан на сценическое световое оборудование и тестируется как компактная однопортовая нода.</p>
+      <p>Текущая аппаратная платформа разработки — WT32-ETH01 на ESP32 с Ethernet PHY LAN8720. Программная реализация Art-Net 4 и физический DMX-тракт проходят проверку; продукт пока не выпущен.</p>
+    </section>
 
-<div class="container">
+    <section class="section" aria-labelledby="features-title">
+      <h2 id="features-title">Функции текущей версии</h2>
+      <div class="grid">
+        <article class="card"><h3>Один DMX-выход</h3><p>Один физический выход DMX512 и один назначаемый DMX-универс.</p></article>
+        <article class="card"><h3>Art-Net по Ethernet</h3><p>Одноадресный сетевой шлюз на базе WT32-ETH01. Совместимость проверяется в ходе разработки.</p></article>
+        <article class="card"><h3>Без RDM</h3><p>Двусторонний обмен RDM в этой версии не реализуется. Направление DMX — только на выход.</p></article>
+      </div>
+    </section>
 
-<div class="hero">
-<h1>ArtNet Node 2x</h1>
-<p class="subtitle">
-Art-Net → DMX конвертер с двумя независимыми DMX выходами и web интерфейсом
-</p>
-</div>
+    <section class="section" aria-labelledby="specs-title">
+      <h2 id="specs-title">Технические сведения</h2>
+      <dl class="specs">
+        <div class="spec"><dt>Название продукта</dt><dd>Sahna Node 01</dd></div>
+        <div class="spec"><dt>Разработчик / бренд</dt><dd>Arman Nurzhanov · Sahna Lab</dd></div>
+        <div class="spec"><dt>Разработка</dt><dd>Казахстан</dd></div>
+        <div class="spec"><dt>Сетевая платформа</dt><dd>WT32-ETH01 · ESP32 / LAN8720</dd></div>
+        <div class="spec"><dt>Сетевой протокол</dt><dd>Art-Net 4, реализация проверяется</dd></div>
+        <div class="spec"><dt>DMX-выходы</dt><dd>1 × DMX512</dd></div>
+        <div class="spec"><dt>Art-Net universes received</dt><dd>1</dd></div>
+        <div class="spec"><dt>Physical DMX input ports</dt><dd>0</dd></div>
+        <div class="spec"><dt>Physical DMX output ports</dt><dd>1</dd></div>
+        <div class="spec"><dt>DMX line rate</dt><dd>250 kbit/s</dd></div>
+        <div class="spec"><dt>RDM</dt><dd>Не поддерживается</dd></div>
+        <div class="spec"><dt>Статус</dt><dd>Инженерный прототип</dd></div>
+      </dl>
+    </section>
 
-<!-- описание -->
+    <section class="section" aria-labelledby="protocol-title">
+      <h2 id="protocol-title">Профиль протокола</h2>
+      <p>В прошивке прототипа реализуются сетевой запуск ноды и обработка основных сообщений Art-Net для одного выходного порта.</p>
+      <ul class="features">
+        <li>Обнаружение и объявление ноды: ArtPoll / ArtPollReply.</li>
+        <li>Выходные данные DMX: ArtDmx, с поддержкой ArtSync и ArtNzs.</li>
+        <li>Управление настройками порта и IP: ArtAddress и ArtIpProg.</li>
+        <li>Сетевое объединение источников реализовано в прошивке; совместимость и поведение проверяются.</li>
+      </ul>
+      <div class="notice" style="margin-top:22px"><strong>Статус идентификаторов.</strong> Sahna Lab — название бренда проекта. ESTA Manufacturer ID запрошен; Art-Net OEM Code ещё не присвоен. Эта страница не заявляет о сертификации или завершённой проверке соответствия.</div>
+    </section>
 
-<div class="section">
-<h2>Описание</h2>
+    <section class="section" aria-labelledby="english-title">
+      <div class="english">
+        <h2 id="english-title">English product summary</h2>
+        <p><strong>Sahna Node 01</strong> is a single-output Art-Net to DMX512 gateway in engineering prototype development by Sahna Lab, an individual lighting-control and electronics development project based in Kazakhstan.</p>
+        <p>The current development platform is WT32-ETH01 (ESP32 with LAN8720 Ethernet PHY). The planned product receives one Art-Net universe, has no physical DMX input and one physical DMX512 output. RDM is not supported. Art-Net 4 implementation and hardware interoperability are still under validation. No certification or commercial release is claimed. An ESTA Manufacturer ID has been requested separately; an Art-Net OEM Code has not yet been assigned.</p>
+      </div>
+    </section>
 
-<p>
-ArtNet Node 2x — профессиональное устройство для преобразования Art-Net сигнала
-в два независимых DMX512 выхода. Устройство работает по Ethernet и имеет
-удобный web-интерфейс для настройки параметров.
-</p>
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div><h2 id="contact-title">Связаться с разработчиком</h2><p>Вопросы по проекту Sahna Node 01 и Sahna Lab.</p></div>
+      <a class="button" href="mailto:armannyrzhanov@gmail.com">Написать</a>
+    </section>
+  </main>
 
-<div class="image-box">
-Фото устройства / схема / рендер
-</div>
-</div>
-
-<!-- характеристики -->
-
-<div class="section">
-<h2>Основные возможности</h2>
-
-<div class="features">
-<!-- характеристики -->
-
-<div class="section">
-<div class="section">
-<h2>Технические характеристики</h2>
-
-<div class="specs">
-
-<div class="spec">
-<span>Протокол</span>
-<span>Art-Net → DMX512</span>
-</div>
-
-<div class="spec">
-<span>DMX выходы</span>
-<span>2 независимых universes</span>
-</div>
-
-<div class="spec">
-<span>Сеть</span>
-<span>Ethernet 10/100 Mbps</span>
-</div>
-
-<div class="spec">
-<span>Web интерфейс</span>
-<span>Настройка IP, universes, сеть</span>
-</div>
-
-<div class="spec">
-<span>OTA обновление</span>
-<span>Через браузер</span>
-</div>
-
-<div class="spec">
-<span>Питание</span>
-<span>5V DC</span>
-</div>
-
-<div class="spec">
-<span>Задержка</span>
-<span>Минимальная</span>
-</div>
-
-<div class="spec">
-<span>Назначение</span>
-<span>Сценический свет</span>
-</div>
-
-</div>
-</div>
-
-<h2>Прошивка</h2>
-
-<p>Скачать последнюю версию прошивки устройства:</p>
-
-<a href="#" class="button">Скачать прошивку</a>
-</div>
-
-</div>
-
+  <footer><div class="wrap">© 2026 Sahna Lab · Sahna Node 01 — инженерный прототип<br>Art-Net™ Designed by and Copyright Artistic Licence Engineering Ltd.</div></footer>
 </body>
 </html>

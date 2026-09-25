@@ -1,110 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Проекты — SahnaLab</title>
-
-<style>
-
-body {
-    margin:0;
-    font-family:"Segoe UI",sans-serif;
-    background:#020617;
-    color:white;
-}
-
-.nav {
-    position:sticky;
-    top:0;
-    backdrop-filter: blur(10px);
-    background: rgba(2,6,23,0.7);
-    border-bottom:1px solid rgba(255,255,255,0.05);
-}
-
-.nav-container {
-    max-width:1200px;
-    margin:auto;
-    padding:18px 20px;
-    display:flex;
-    justify-content:space-between;
-}
-
-.links a {
-    margin-left:25px;
-    color:#cbd5f5;
-    text-decoration:none;
-}
-
-.links a:hover {
-    color:#22c55e;
-}
-
-.container {
-    max-width:1200px;
-    margin:auto;
-    padding:80px 20px;
-}
-
-.grid {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:30px;
-}
-
-.card {
-    background:#1e293b;
-    padding:30px;
-    border-radius:16px;
-}
-
-.card h2 {
-    color:#22c55e;
-}
-
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Проекты Sahna Lab: сетевые устройства для сценического света, DMX, Art-Net и ESP32.">
+  <title>Проекты — Sahna Lab</title>
+  <link rel="icon" type="image/x-icon" href="favicon_sahnalab.ico">
+  <style>
+    :root { color-scheme:dark; --bg:#07111d; --panel:#101e2d; --line:#213548; --text:#edf4f8; --muted:#a8bac8; --green:#a7f35c; --cyan:#75d8df; }
+    * { box-sizing:border-box; }
+    body { margin:0; font:16px/1.6 "Segoe UI",system-ui,sans-serif; color:var(--text); background:radial-gradient(ellipse at 80% -12%,#15354a 0,transparent 42%),var(--bg); }
+    a { color:inherit; }
+    .wrap { width:min(1080px,calc(100% - 40px)); margin-inline:auto; }
+    .topbar { position:sticky; top:0; backdrop-filter:blur(16px); background:#07111ddd; border-bottom:1px solid #ffffff12; }
+    .nav { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .brand { text-decoration:none; font-weight:700; letter-spacing:.07em; }
+    .links { display:flex; gap:24px; color:var(--muted); font-size:14px; }
+    .links a { text-decoration:none; }
+    .links a:hover { color:var(--green); }
+    main { padding:76px 0 90px; }
+    .eyebrow { color:var(--cyan); text-transform:uppercase; letter-spacing:.15em; font-size:12px; font-weight:700; }
+    h1 { margin:10px 0; font-size:clamp(38px,6vw,62px); line-height:1.1; }
+    .intro { max-width:700px; margin:0 0 34px; color:var(--muted); font-size:18px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:18px; }
+    .card { min-height:230px; display:flex; flex-direction:column; padding:27px; border:1px solid var(--line); border-radius:18px; background:linear-gradient(145deg,#14283a,#0d1926); text-decoration:none; transition:transform .2s,border-color .2s; }
+    a.card:hover { transform:translateY(-4px); border-color:#a7f35c88; }
+    .tag { align-self:flex-start; padding:4px 9px; border:1px solid #a7f35c55; border-radius:99px; color:#d8f8b3; font-size:11px; letter-spacing:.04em; text-transform:uppercase; }
+    h2 { margin:17px 0 7px; color:var(--green); font-size:22px; }
+    .card p { margin:0; color:#bfccd6; }
+    .more { margin-top:auto; padding-top:22px; color:var(--cyan); font-size:14px; }
+    footer { padding:28px 0 38px; border-top:1px solid #ffffff12; color:#8094a4; font-size:13px; }
+    @media(max-width:500px) { .wrap { width:calc(100% - 28px); } .nav { min-height:60px; } .links { gap:15px; } main { padding:55px 0 65px; } }
+  </style>
 </head>
-
 <body>
-
-<nav class="nav">
-<div class="nav-container">
-<div>SahnaLab</div>
-
-<div class="links">
-<a href="index.html">Главная</a>
-<a href="projects.html">Проекты</a>
-</div>
-</nav>
-
-<div class="container">
-
-<h1>Проекты SahnaLab</h1>
-<br>
-
-<div class="grid">
-
-<a href="artnet-node.html" style="text-decoration:none;color:inherit;">
-<div class="card">
-<h2>ArtNet Node 2x</h2>
-<p>Art-Net → DMX конвертер с двумя выходами, web интерфейсом и Ethernet.</p>
-</div>
-</a>
-
-
-<div class="card">
-<h2>Sahna Control</h2>
-<p>Профессиональный световой пульт с playback engine и эффектами.</p>
-</div>
-
-<div class="card">
-<h2>ESP32 DMX устройства</h2>
-<p>Разработка контроллеров и автоматизации сценического света.</p>
-</div>
-
-</div>
-
-</div>
-
+  <div class="topbar">
+    <nav class="wrap nav" aria-label="Основная навигация">
+      <a class="brand" href="index.html">SAHNA LAB</a>
+      <div class="links"><a href="index.html">Главная</a><a href="projects.html" aria-current="page">Проекты</a></div>
+    </nav>
+  </div>
+  <main class="wrap">
+    <div class="eyebrow">Разработка · сценический свет</div>
+    <h1>Проекты Sahna Lab</h1>
+    <p class="intro">Электроника и программные решения для светового оборудования. Здесь публикуется статус проектов и подтверждённые технические сведения.</p>
+    <div class="grid">
+      <a class="card" href="artnet-node.html">
+        <span class="tag">Инженерный прототип</span>
+        <h2>Sahna Node 01</h2>
+        <p>Однопортовая Art-Net → DMX512 нода на WT32-ETH01. Один физический DMX-выход и один universe; RDM не поддерживается.</p>
+        <span class="more">Описание устройства →</span>
+      </a>
+      <article class="card">
+        <span class="tag">В разработке</span>
+        <h2>Sahna Control</h2>
+        <p>Проект программного управления сценическим светом. Информация будет опубликована по мере готовности.</p>
+      </article>
+      <article class="card">
+        <span class="tag">Исследования</span>
+        <h2>DMX и ESP32</h2>
+        <p>Эксперименты с микроконтроллерами, сетевыми протоколами и интерфейсами сценического оборудования.</p>
+      </article>
+    </div>
+  </main>
+  <footer><div class="wrap">© 2026 Sahna Lab</div></footer>
 </body>
 </html>
